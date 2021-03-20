@@ -11,12 +11,13 @@
         $password = $_POST['password'];
 
 
-        $con_pass = mysqli_query($connection , "SELECT password FROM students WHERE exam_roll = '$roll'");
+        $con_pass = mysqli_query($connection , "SELECT * FROM students WHERE exam_roll = '$roll'");
         $pass = mysqli_fetch_assoc($con_pass);
 
         if(mysqli_num_rows($con_pass) == 1){
             if($password == $pass["password"]){
                 $_SESSION["roll"]=$roll;
+                $_SESSION["full_name"] = $pass["full_name"];
                 header("location: panel/");
             }
             else {

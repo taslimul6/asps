@@ -1,0 +1,19 @@
+.logo {
+	max-height: 50px;
+	float: left;
+	max-width: 3vw;
+	/* display: inline-block; */
+}
+.head {
+	float: left;
+	font-size: 17px;
+	overflow: hidden;
+	max-width: 11vw;
+	margin-left: .5vw;
+	margin-top: 1vh;
+	
+}
+.sidebar-heading{
+    padding-right: 0px  !important;
+    overflow: hidden;
+}
