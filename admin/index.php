@@ -1,6 +1,4 @@
-<?php 
-  require_once("temp-parts/header.php");
-?>
+<?php require_once("templete-parts/header.php") ?>
 
       <div class="container-fluid">
         <h2 class= "m-3 text-center" >Dashboard</h2>
@@ -41,4 +39,8 @@
 
 
 
-<?php require_once("temp-parts/footer.php");?>
+
+
+
+
+      <?php require_once("templete-parts/footer.php") ?>

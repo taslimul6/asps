@@ -1,11 +1,13 @@
 <?php 
 
 session_start();
-require_once("rprocess.php");
-if(isset($_SESSION["roll"])){
-    header("location: panel/");
+if(isset($_SESSION['logged'])){
+    header("location: index.php");
     die();
 }
+
+require_once("../rprocess.php");
+
 
 if (isset($_POST['register'])){
     $full_name = $_POST["full_name"];
@@ -17,10 +19,8 @@ if (isset($_POST['register'])){
     $permanent_adress = $_POST["permanent_adress"];
     $blood_group = $_POST["blood_group"];
     $my_phone_number = $_POST["my_phone_number"]; 
-    $father_phone_number = $_POST["father_phone_number"];
-    $batch = $_POST["batch"];
-    $class_roll = $_POST["class_roll"];
-    $exam_roll = $_POST["exam_roll"];
+    $position = $_POST["position"];
+    $token = $_POST["token"];
     $email = $_POST["email"];
     $password = $_POST["password"];
     $pconfirm = $_POST["bypass"];
@@ -28,42 +28,34 @@ if (isset($_POST['register'])){
 
     
 
-    $dbemail = mysqli_query($connection, "SELECT password FROM students WHERE email = '$email';");
-    $dbroll = mysqli_query($connection , "SELECT * FROM students WHERE exam_roll = '$exam_roll';");
+    $dbemail = mysqli_query($connection, "SELECT password FROM teachers WHERE email = '$email';");
+    $dbtoken = mysqli_query($connection , "SELECT * FROM tokens ;");
+
+    $tokenlist = mysqli_fetch_assoc($dbtoken);
+   
+
 
 
    
     if(mysqli_num_rows($dbemail)== 0){
         if($password == $pconfirm){
-            if(mysqli_num_rows($dbroll) == 0){
-                mysqli_query($connection , "INSERT INTO students( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , father_phone_number , batch , class_roll , exam_roll , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$father_phone_number' , '$batch' , '$class_roll' , '$exam_roll' , '$email' , '$password');");
-                mysqli_query($connection , "INSERT INTO images(exam_roll) VALUES ('$exam_roll');");
-                $reg_success= "Your registration is successfull. Now Please <a href='index.php'>Login</a>";
+            if( $token ==  $tokenlist["token"] ){
+                mysqli_query($connection , "INSERT INTO teachers( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , position , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$position'  , '$email' , '$password');");
+
+                
 
                 
             }else{
-                $error['roll_exist']= "Exam roll already exist";
-
+                $error['token']= "Token number is incorrect";
             }
-            
         }else{
             $error["pass-not-matched"] = "Password Does not matched.";
-
         }
-        
     }
     else{
         $error['email_exist'] = "Email adress already exist try another Email adress.";
 
     }
-   
-
-
-    
-
-  
-
-
 }
 
 
@@ -79,7 +71,7 @@ if (isset($_POST['register'])){
     <title>Welcome TO Academic Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
 
@@ -93,9 +85,25 @@ if (isset($_POST['register'])){
         <div class="row center ">
             <div class="col">
               
-                <h3 class="reg">Student Registration form</h3>
+                <h3 class="reg">Teacher Registration form</h3>
             </div>
             
+            
+        </div>
+        <div class="row">
+        <div class="error">
+
+<?php if(isset($error["email_exist"])) {
+    echo $error["email_exist"] . "<br>"; 
+}
+    if(isset($error["pass-not-matched"])) {
+    echo $error["pass-not-matched"] . "<br>";  
+} 
+if(isset($error["token"])) {
+    echo $error["token"] . "<br>";  
+} 
+    ?>
+</div>
         </div>
         
         <form method="POST">
@@ -147,33 +155,22 @@ if (isset($_POST['register'])){
                         <label for="MyPhonenumber" class="form-label">My Phone number:</label>
                         <input type="number" class="form-control" name="my_phone_number" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="father_phone_number" class="form-label">Father's Phone Number:</label>
-                        <input type="number" class="form-control" name="father_phone_number" required>
-                    </div>
+                    
                 </div>
                
                 
             </div>
             <div class="row mt-5 reg-row mb-5">
-                <div class="col-md-4 p-5">
-                    <div class="mb-3">
-                        <label for="batch" class="form-label">Batch:</label>
-                        <input type="number" class="form-control" name="batch" required>
-                    </div>
+                <div class="col-md-6 p-5">
+                    <label for="father_phone_number" class="form-label">Position :</label>
+                    <input type="text" class="form-control" name="position"  placeholder="Lecturer" >
+
+                    <label for="father_phone_number" class="form-label mt-2">Token Number: (Contact with Administration)</label>
+                    <input type="text" class="form-control" name="token" required>
+                    
                 </div>
-                <div class="col-md-4 p-5">
-                    <div class="mb-3">
-                        <label for="Classroll" class="form-label">Class Roll:</label>
-                        <input type="number" class="form-control" name="class_roll" required>
-                    </div>
-                </div>
-                <div class="col-md-4 p-5">
-                    <div class="mb-3">
-                        <label for="Examroll" class="form-label">Exam Roll:</label>
-                        <input type="number" class="form-control" name="exam_roll" required>
-                    </div>
-                </div>
+                
+                
             </div>
             <div class="row mt-5 reg-row mb-5">
                 <div class="col-md-7 p-5">
@@ -195,22 +192,7 @@ if (isset($_POST['register'])){
                     </div>
                 </div>
             </div>
-            <div class="error">
-
-            <?php if(isset($error["email_exist"])) {
-                echo $error["email_exist"] . "<br>"; 
-            }
-                if(isset($error["pass-not-matched"])) {
-                echo $error["pass-not-matched"] . "<br>";  
-            } 
-                if(isset($error["roll_exist"])) {
-                echo $error["roll_exist"] . "<br>"; 
-            }
-                
-                
-                
-                ?>
-            </div>
+            
 
 
             <div class="center mb-5">

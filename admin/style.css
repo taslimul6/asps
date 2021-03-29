@@ -17,9 +17,31 @@
     padding-right: 0px  !important;
     overflow: hidden;
 }
+
+
+.center{
+   text-align: center !important;
+}
+
+
+.login{
+    background-color: #449D44;
+    font-size: 20px;
+    color:white;
+    font-weight: bold;
+    border-radius: 6px;
+}
+.login-btn{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
 .error{
     color :#c71400;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
+}
+textarea{
+	width:100%;
 }

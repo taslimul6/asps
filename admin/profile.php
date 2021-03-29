@@ -1,9 +1,20 @@
-<?php 
-  require_once("temp-parts/header.php");
+<?php
+
+require_once("templete-parts/header.php") ;
+
+require_once("../rprocess.php");
+
+$email= $_SESSION["email"];
+$dbmain = $connection -> query("SELECT * FROM teachers WHERE email = '$email'");
+$db = mysqli_fetch_array($dbmain);
+
+
+
+
 ?>
 
       <div class="container-fluid">
-        <h2 class= "m-3 text-center" >Dashboard</h2>
+        <h2 class= "m-3 text-center" >Profile</h2>
       </div>
       
       <div class="row ml-3">
@@ -20,16 +31,7 @@
               <p class="name"><?php echo " Phone Number : " . $db["my_phone_number"];;?></p>
             </div>
           </div>
-          <div class="card mt-3">
-            <div class="card-header">
-              Educational information
-            </div>
-            <div class="card-body">
-              <p class="name"><?php echo " Batch : " . $db["batch"];;?></p>
-              <p class="name"><?php echo " Exam Roll : " . $db["exam_roll"];;?></p>
-              <p class="name"><?php echo " Class Roll : " . $db["class_roll"];;?></p>
-            </div>
-          </div>
+          
         </div>
       </div>
       
@@ -41,4 +43,29 @@
 
 
 
-<?php require_once("temp-parts/footer.php");?>
+
+
+
+
+
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
