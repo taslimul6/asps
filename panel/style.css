@@ -4,6 +4,11 @@
 	max-width: 3vw;
 	/* display: inline-block; */
 }
+
+.post{
+
+background: #c7c7c74f  !important;
+}
 .head {
 	float: left;
 	font-size: 17px;

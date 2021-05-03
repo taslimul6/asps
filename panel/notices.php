@@ -1,8 +1,9 @@
 <?php
  require_once("temp-parts/header.php");
 
-$db = mysqli_query($connection, "SELECT * FROM notices");
-$row = mysqli_num_rows($db);
+$dbn = mysqli_query($connection, "SELECT * FROM notices");
+$row = mysqli_num_rows($dbn);
+
 
 
 ?>
@@ -15,22 +16,31 @@ $row = mysqli_num_rows($db);
         </div>
       
         <div class="row m-3">
-            <?php 
-           
-            foreach($db as $line){ ?>
+            
 
 
            
-            <div class="col-sm-6">
-                <div class="card mt-3">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $line['title']; ?></h5>
-                    <p class="card-text"><?php echo $line["content"]; ?></p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
+            <div class="col-sm-10 m-auto">
+            <?php
+            foreach($dbn as $line){ ?>
+
+        <div class="col-sm-10 m-auto">
+      
+          <div class="card mt-3">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $line['title']; ?></h5>
+               
+                <h6 class="card-subtitle my-3 text-muted"><?php echo $line['auther'] . " - " . $line['date']; ?></h6>
+                <p class="card-text"><?php echo $line["content"]; ?></p>
+
+                <a href="editpost.php?id=<?php echo $line['noticeid'];?>" class="btn btn-primary">View Notice</a>
             </div>
-            <?php } ?>
+          </div>
+        
+        </div>
+              <?php }?>
+            </div>
+           
         </div>
                 
             

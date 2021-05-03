@@ -24,7 +24,7 @@ $db = mysqli_fetch_array($dbmain);
               Personal information
             </div>
             <div class="card-body">
-              <p class="name"><?php echo " Name : " . $_SESSION["full_name"];?></p>
+              <p class="name"><?php echo " Name : " . $db["full_name"];?></p>
               <p class="name"><?php echo " Email : " . $db["email"];?></p>
               <p class="name"><?php echo " Present Adress : " . $db["present_adress"];;?></p>
               <p class="name"><?php echo " Blood Group : " . $db["blood_group"];;?></p>

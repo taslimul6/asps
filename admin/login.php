@@ -6,6 +6,10 @@
         header("location: index.php");
         die();
     }
+    if(isset($_SESSION["roll"])){
+        header("location: ../");
+        die();
+    }
 
     if(isset($_POST['login'])){
         $email = $_POST['email'];
@@ -19,7 +23,6 @@
             if($password == $pass["password"]){
                 $_SESSION["logged"]="logged in";
                 $_SESSION["email"]=$email;
-                $_SESSION["full_name"] = $pass["full_name"];
                 header("location: index.php");
             }
             else {
@@ -57,15 +60,18 @@
             </div>
            
         </div>
+        <div class="row bz">
         <div class="row center mt-5 ">
             <div class="col">
               
-                <h3 class="welcome">Welcome to Advance Academic Portal</h3>
+                <h3 class="welcome">Teacher's Area</h3>
             </div>
             
         </div>
         <div class="row mt-5">
-            <div class="col-md-7 m-auto p-5 login ">
+            <div class="col-md-7">
+            </div>
+            <div class="col-md-5 text-right p-5 login mt-5">
                 <form method="POST">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
@@ -96,39 +102,15 @@
 
 
                     <div class="logaction center ">
-                        <button type="submit" name="login" class="btn btn-primary login-btn">Teacher Login</button>
+                        <button type="submit" name="login" class="btn btn-primary login-btn ">Teacher Login</button>
+                        <a  href="register.php" class="btn btn-primary login-btn ml-5">Teacher Registraion</a>
 
                     </div>
                 </form>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-9 m-auto mt-4 mb-4 login">
-                <ul class="nav nav-tabs m-4 justify-content-center" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">New Student?</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">What is Student Portal </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">How to use it</button>
-                    </li>
-                </ul>
-                <div class="tab-content m-4" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Are you a new student of Department of Electrical and Electronice engineering? <br>
-                Please Register here to use this portal.<br>
-                <a href="register.php" style="color:#0d6efd;">Registraion</a> </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Student Portal of Gono Bishwabidyalay EEE dept provide student a single point data access. Student can get their important educational data , their progress and notices from this portal.</div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">TO use this student portal you have to have a student account. Fill up the registration from register page. Then login to the portal and get your desire information.</div>
-                </div>
-
-            
-            
-            </div>
-        
-        
         </div>
+        
         
  
     </div>

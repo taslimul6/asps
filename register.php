@@ -38,6 +38,8 @@ if (isset($_POST['register'])){
             if(mysqli_num_rows($dbroll) == 0){
                 mysqli_query($connection , "INSERT INTO students( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , father_phone_number , batch , class_roll , exam_roll , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$father_phone_number' , '$batch' , '$class_roll' , '$exam_roll' , '$email' , '$password');");
                 mysqli_query($connection , "INSERT INTO images(exam_roll) VALUES ('$exam_roll');");
+                mysqli_query($connection , "INSERT INTO result(roll) VALUES ('$exam_roll');");
+                
                 $reg_success= "Your registration is successfull. Now Please <a href='index.php'>Login</a>";
 
                 

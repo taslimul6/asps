@@ -6,6 +6,13 @@
         die();
     }
 
+    if(isset($_SESSION["logged"])){
+        header("location: admin/");
+        die();
+    }
+    
+    
+
     if(isset($_POST['login'])){
         $roll = $_POST['roll'];
         $password = $_POST['password'];

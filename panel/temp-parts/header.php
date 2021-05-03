@@ -2,6 +2,16 @@
 
 session_start();
 
+if(!isset($_SESSION["roll"])){
+  header("location: ../index.php");
+  die();
+}
+
+if(isset($_SESSION['logged'])){
+  header("location: ../admin/login.php");
+  die();
+}
+
 require_once("../rprocess.php");
 
 require_once("./logic.php");

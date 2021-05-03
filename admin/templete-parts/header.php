@@ -21,7 +21,8 @@ require_once("./logic.php");
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Student Panel - Electrical and Electronic Engineering</title>
+  <title>Teacher's Panel - Electrical and Electronic Engineering</title>
+  <link rel="icon" href="img/logo1.png" type="image" sizes="16x16"> 
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -46,11 +47,12 @@ require_once("./logic.php");
         <a href="index.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="profile.php" class="list-group-item list-group-item-action bg-light">Profile</a>
         <a href="students.php" class="list-group-item list-group-item-action bg-light">All Students</a>
+        <a href="teachers.php" class="list-group-item list-group-item-action bg-light">All Teachers</a>
         <a href="result.php" class="list-group-item list-group-item-action bg-light">Result</a>
         <a href="notices.php" class="list-group-item list-group-item-action bg-light">Notices</a>
         <a href="payments.php" class="list-group-item list-group-item-action bg-light">Payments</a>
         <a href="books.php" class="list-group-item list-group-item-action bg-light">Books</a>
-        <a href="teachers.php" class="list-group-item list-group-item-action bg-light">Teachers</a>
+        
         <a href="forum.php" class="list-group-item list-group-item-action bg-light">Forum</a>
         <a href="journal.php" class="list-group-item list-group-item-action bg-light">Journals</a>
         <a href="jobs.php" class="list-group-item list-group-item-action bg-light">Jobs</a>
@@ -74,7 +76,7 @@ require_once("./logic.php");
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php echo $_SESSION["full_name"];?>
+                <?php echo $db["full_name"];?>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Profile</a>
