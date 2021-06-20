@@ -13,7 +13,12 @@
     $com = $_POST['comment'];
     $comid = rand();
     mysqli_query($connection, "INSERT INTO comment(name,com,postid,comid,batch,date) VALUES ('$name' , '$com' , '$id', '$comid' , '$batch' , '$today');");
+    header("location: viewpost.php?id=$id&update='yes'");
   }
+  if(isset($_GET['update'])){
+    $success['upload']= "Your Comment is Added Successfully";
+  }
+
   
 ?>
 
@@ -22,7 +27,14 @@
       </div>
       
       <div class="row mx-3 ">
+
             <div class="col-sm-10 m-auto">
+            <div class="success text-success my-4">
+            <?php if(isset($success['upload'])){
+              echo $success['upload'];
+            } ?>
+          
+          </div>
             
                 <div class="card mt-3">
                 <div class="card-body">

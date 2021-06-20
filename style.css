@@ -2,7 +2,7 @@
 body{
     background-image: linear-gradient(to right,#d1d8e0,#a5b1c2);
     font-family: roboto, 'Times New Roman', Times, serif;
-    min-height: 1200px;
+   
 }
 .center{
    text-align: center !important;

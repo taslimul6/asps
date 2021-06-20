@@ -8,6 +8,17 @@ $roll= $_SESSION["roll"];
 $dbmain = $connection -> query("SELECT * FROM students WHERE exam_roll = '$roll'");
 $db = mysqli_fetch_array($dbmain);
 
+if(isset($_POST['dsub'])){
+  $blood_date= $_POST['blood_date'];
+
+  mysqli_query($connection , "UPDATE students SET blood_date = '$blood_date' WHERE exam_roll = '$roll';"); 
+
+  header("location: profile.php?blooddate='updated'");
+
+
+
+}
+
 if(isset($_POST['upload'])){
   $file = $_FILES['profile'];
 
@@ -30,6 +41,7 @@ if(isset($_POST['upload'])){
         move_uploaded_file($file_tname,  $destination);
         mysqli_query($connection , "UPDATE images SET profile = '$destination' WHERE exam_roll = '$roll';"); 
         $success['uploaded'] = "Your file is uploaded successfully";
+        header("location: profile.php?update='success'");
 
       }else{
         $error['size']="Your image size is larger than 2mb";
@@ -68,6 +80,7 @@ if(isset($_POST['uploadid'])){
         move_uploaded_file($file_tname,  $destination);
         mysqli_query($connection , "UPDATE images SET id_card = '$destination' WHERE exam_roll = '$roll';"); 
         $success['uploaded'] = "Your file is uploaded successfully";
+        header("location: profile.php?update='successed'");
 
       }else{
         $error['size']="Your image size is larger than 2mb";
@@ -176,6 +189,18 @@ $show = mysqli_fetch_assoc($showP);
       <div class="container-fluid">
         <h2 class= "m-3 text-center" >Profile</h2>
       </div>
+      <?php if(isset($_GET["blooddate"])){
+          
+
+         ?>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="alert alert-success ml-5 mr-5 p-3 " role="alert">
+                    Your Blood Donation Information is Updated Successfully!
+                </div>
+            </div>
+        </div>
+        <?php }?>
       
       <div class="row ml-3">
         <div class="col-md-6">
@@ -201,6 +226,28 @@ $show = mysqli_fetch_assoc($showP);
               <p class="name"><?php echo " Class Roll : " . $db["class_roll"];;?></p>
             </div>
           </div>
+          <div class="card mt-3">
+            <div class="card-header">
+              Blood Donation Information
+            </div>
+            <div class="card-body">
+              
+              <p class="name"><?php echo " Last Date Of Donation : " . $db["blood_date"];;?></p>
+              <form action="" method="post">
+                <div class="row">
+                <div class="col-md-6"><input type="date" class="form-control" name="blood_date" id=""></div>
+                <div class="col-md-3"><input type="submit" class="form-control btn btn-primary" value="Update" name="dsub"></div>
+                
+                </div>
+                  
+                  
+              
+              
+              </form>
+              
+            </div>
+          </div>
+
         </div>
         <div class="col-md-6">
           <div class="">

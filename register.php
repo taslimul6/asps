@@ -1,5 +1,6 @@
 <?php 
 
+
 session_start();
 require_once("rprocess.php");
 if(isset($_SESSION["roll"])){
@@ -39,6 +40,15 @@ if (isset($_POST['register'])){
                 mysqli_query($connection , "INSERT INTO students( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , father_phone_number , batch , class_roll , exam_roll , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$father_phone_number' , '$batch' , '$class_roll' , '$exam_roll' , '$email' , '$password');");
                 mysqli_query($connection , "INSERT INTO images(exam_roll) VALUES ('$exam_roll');");
                 mysqli_query($connection , "INSERT INTO result(roll) VALUES ('$exam_roll');");
+
+                $vkey=md5(time());
+                $to =     $email;
+                $sub = "Email Verification For Student Portal";
+                $msg = "Please click the link for your account verification <br> https://localhost/asps/vkey1.php?vkey=$vkey";
+                $header = "From: taslimulhasan.com";
+
+                mail($to , $sub , $msg , $header);
+
                 
                 $reg_success= "Your registration is successfull. Now Please <a href='index.php'>Login</a>";
 

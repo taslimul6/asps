@@ -73,7 +73,7 @@
             <div class="col-md-7 m-auto p-5 login ">
                 <form method="POST">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Exam Roll</label>
+                        <label for="exampleInputEmail1" class="form-label">Student ID</label>
                         <input type="number" class="form-control" id="examroll" name="roll">
                     </div>
                     <div class="mb-3">
@@ -123,7 +123,7 @@
                 <div class="tab-content m-4" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Are you a new student of Department of Electrical and Electronice engineering? <br>
                 Please Register here to use this portal.<br>
-                <a href="register.php" style="color:#0d6efd;">Registraion</a> </div>
+                <a href="register.php" style="color:#0b26b6;">Registraion</a> </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Student Portal of Gono Bishwabidyalay EEE dept provide student a single point data access. Student can get their important educational data , their progress and notices from this portal.</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">TO use this student portal you have to have a student account. Fill up the registration from register page. Then login to the portal and get your desire information.</div>
                 </div>

@@ -39,6 +39,7 @@
             <p class="card-text"><?php echo $line["description"]; ?></p>
 
             <a href="editjob.php?id=<?php echo $line['jobid'];?>" class="btn btn-primary">Edit Job</a>
+            
         </div>
         </div>
         

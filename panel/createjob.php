@@ -35,7 +35,7 @@ if (isset($_POST['upload'])){
     $file_ext = explode("." ,  $file_name);
     $fileActualExt = strtolower(end($file_ext));
   
-    $allowed = array('pdf','doc','docx' , 'ppt' , 'pptx' , 'txt');
+    $allowed = array('pdf','doc','docx' , 'ppt' , 'pptx' , 'txt' , 'jpg' , 'jpag' , 'png');
   
     if(in_array($fileActualExt , $allowed)){
       if($file_error == 0){
