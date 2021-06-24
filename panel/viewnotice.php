@@ -2,13 +2,13 @@
   require_once("temp-parts/header.php");
 
   $id = $_GET['id'];
-  $dbp = mysqli_query($connection, "SELECT * FROM job WHERE jobid= '$id' ");
+  $dbp = mysqli_query($connection, "SELECT * FROM notices WHERE noticeid= '$id' ");
   $dbmain0 = mysqli_fetch_assoc($dbp);
   
 ?>
 
       <div class="container-fluid">
-        <h2 class= "m-3 text-center" >View Job</h2>
+        <h2 class= "m-3 text-center" >View Notice</h2>
       </div>
       
       <div class="row ml-3">
@@ -17,9 +17,9 @@
                 <div class="card mt-3">
                     <div class="card-body">
                         <h3 class="card-title"><?php echo $dbmain0['title']; ?></h3>
-                        <h6 class="card-subtitle my-3 text-muted"><?php echo "Updated by: " . $dbmain0['student'] . " - " . $dbmain0['date'] . " - " . "Batch: " . $dbmain0['batch']; ?></h6>
-                        <p class="card-text"><?php echo $dbmain0["description"]; ?></p>
-                        <a href="<?php echo $dbmain0['img']; ?>">Download File</a>
+                        <h6 class="card-subtitle my-3 text-muted"><?php echo "Updated by: " . $dbmain0['auther'] . " - " . $dbmain0['date'] ; ?></h6>
+                        <p class="card-text"><?php echo $dbmain0["content"]; ?></p>
+                        <a href="<?php echo $dbmain0['file']; ?>">Download File</a>
                         
 
                         

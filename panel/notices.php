@@ -31,9 +31,18 @@ $row = mysqli_num_rows($dbn);
                 <h5 class="card-title"><?php echo $line['title']; ?></h5>
                
                 <h6 class="card-subtitle my-3 text-muted"><?php echo $line['auther'] . " - " . $line['date']; ?></h6>
-                <p class="card-text"><?php echo $line["content"]; ?></p>
+                <p class="card-text"><?php
+                $con1 = $line["content"];
+                $con2=explode(" ",$con1);
+                $con3=array_slice($con2,0,20);
+                $finalcon =implode(" ",$con3);
 
-                <a href="editpost.php?id=<?php echo $line['noticeid'];?>" class="btn btn-primary">View Notice</a>
+
+                
+                
+                echo  $finalcon . ". . . . . . . . . . .";?></p>
+
+                <a href="viewnotice.php?id=<?php echo $line['noticeid'];?>" class="btn btn-primary">View Notice</a>
             </div>
           </div>
         

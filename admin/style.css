@@ -45,3 +45,13 @@
 textarea{
 	width:100%;
 }
+
+.footer{
+	overflow: hidden;
+	height: 7vh;
+	color:white;
+	background-color: #34495e;
+}
+.footer a{
+	color:#e67e22;
+}

@@ -11,8 +11,7 @@ require_once("../rprocess.php");
 
 if (isset($_POST['register'])){
     $full_name = $_POST["full_name"];
-    $fathers_name = $_POST["fathers_name"];
-    $mothers_name = $_POST["mothers_name"];
+    
     $dob = $_POST["dob"];
     $gender = $_POST["gender"];
     $present_adress = $_POST["present_adress"];
@@ -40,7 +39,7 @@ if (isset($_POST['register'])){
     if(mysqli_num_rows($dbemail)== 0){
         if($password == $pconfirm){
             if( $token ==  $tokenlist["token"] ){
-                mysqli_query($connection , "INSERT INTO teachers( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , position , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$position'  , '$email' , '$password');");
+                mysqli_query($connection , "INSERT INTO teachers( full_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , position , email , password ) VALUES('$full_name', '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$position'  , '$email' , '$password');");
 
                 
 
@@ -115,14 +114,8 @@ if(isset($error["token"])) {
                         <input type="text" class="form-control" name="full_name" required>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="Fathersname" class="form-label">Father's Name:</label>
-                        <input type="text" class="form-control" name="fathers_name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="Mothersname" class="form-label">Mother's Name:</label>
-                        <input type="text" class="form-control" name="mothers_name" required>
-                    </div>
+                   
+                    
                     <div class="mb-3">
                         <label for="dob" class="form-label">Date of Birth:</label>
                         <input type="date" class="form-control" name="dob" required>
@@ -153,7 +146,7 @@ if(isset($error["token"])) {
                     </div>
                     <div class="mb-3">
                         <label for="MyPhonenumber" class="form-label">My Phone number:</label>
-                        <input type="number" class="form-control" name="my_phone_number" required>
+                        <input type="text" class="form-control" name="my_phone_number" required>
                     </div>
                     
                 </div>

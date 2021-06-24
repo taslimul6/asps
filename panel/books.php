@@ -6,11 +6,15 @@ $row = mysqli_num_rows($db);
 
 if(isset($_POST['sub_code'])){
   $sub= $_POST['sub_code'];
+  $db1=mysqli_query($connection, "SELECT * FROM books WHERE sub_code ='$sub' ");
 }
 
 if(isset($_POST['semester'])){
   $sem= $_POST['semester'];
+  $db2=mysqli_query($connection, "SELECT * FROM books WHERE sem ='$sem'");
 }
+
+
 
 
 ?>
@@ -68,7 +72,7 @@ if(isset($_POST['semester'])){
              
              <?php
 
-              foreach($db as $line){ ?>
+              foreach($db2 as $line){ ?>
 
                 <div class="col-sm-10 m-auto">
                   
@@ -78,7 +82,7 @@ if(isset($_POST['semester'])){
                         <h6 class="card-subtitle my-3 text-muted"><?php echo $line['auther'] . " - " . $line['date'] . " - " . $line['sub_code']; ?></h6>
                         <p class="card-text"><?php echo $line["description"]; ?></p>
     
-                        <a href="#" class="btn btn-primary">View Book/ Notes</a>
+                        <a href="viewbook.php?id=<?php echo $line['book_id']?>" class="btn btn-primary">View Book/ Notes</a>
                     </div>
                     </div>
                 </div>
@@ -95,7 +99,7 @@ if(isset($_POST['semester'])){
 
 
 
-                  foreach($db as $line){ ?>
+                  foreach($db1 as $line){ ?>
     
                     <div class="col-sm-10 m-auto">
                       
@@ -105,7 +109,7 @@ if(isset($_POST['semester'])){
                             <h6 class="card-subtitle my-3 text-muted"><?php echo $line['auther'] . " - " . $line['date'] . " - " . $line['sub_code']; ?></h6>
                             <p class="card-text"><?php echo $line["description"]; ?></p>
         
-                            <a href="#" class="btn btn-primary">View Book/ Notes</a>
+                            <a href="viewbook.php?id=<?php echo $line['book_id']?>" class="btn btn-primary">View Book/ Notes</a>
                         </div>
                         </div>
                     </div>
@@ -133,7 +137,7 @@ if(isset($_POST['semester'])){
                             <h6 class="card-subtitle my-3 text-muted"><?php echo $line['auther'] . " - " . $line['date'] . " - " . $line['sub_code']; ?></h6>
                             <p class="card-text"><?php echo $line["description"]; ?></p>
         
-                            <a href="#" class="btn btn-primary">View Book/ Notes</a>
+                            <a href="viewbook.php?id=<?php echo $line['book_id']?>" class="btn btn-primary">View Book/ Notes</a>
                         </div>
                         </div>
                     </div>

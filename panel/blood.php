@@ -70,7 +70,7 @@
                     </tbody>
                 </table>
             </div>
-      
+                                    </div>
       
    
 <?php require_once("temp-parts/footer.php");?>

@@ -1,15 +1,16 @@
 <?php 
   require_once("temp-parts/header.php");
 
-$paperid =$_GET['id'];
+$comid =$_GET['id'];
+$post = $_GET['postid'];
 
 
 if (isset($_POST['delete'])){
  
 
 
-  $uploaded = mysqli_query($connection , " DELETE FROM journal WHERE journalid  =  '$paperid';");
-  header("location: journal.php?delete='1'");
+  $uploaded = mysqli_query($connection , " DELETE FROM comment WHERE comid =  '$comid';");
+  header("location: viewpost.php?id=$post&delete='comment'");
 
 
 
@@ -25,7 +26,7 @@ if (isset($_POST['delete'])){
       
       <div class="row mt-5">
        <div class="col-md-12 text-center">
-       <h2>Confirm Delete this Journal Paper?</h2>
+       <h2>Confirm Delete this Job Post?</h2>
        <form action="" method="post">
        <button name="delete" class="btn btn-danger mt-5 px-5">Delete</button>
        

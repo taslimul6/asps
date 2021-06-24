@@ -66,7 +66,8 @@
                 <h6 class="card-subtitle my-3 text-muted ml-4"><?php echo $line['date']  . " - " . "Batch: " . $line['batch']; ?></h6>
                 <p class="card-text ml-4"><?php echo $line["com"]; ?></p>
                 <?php if($line['name'] == $db["full_name"]){ ?>
-                  <a class="ml-4" href="editcom.php?id=<?php echo $line['comid']; ?>">Edit Comment</a>
+                  <a class="ml-4 btn btn-success" href="editcom.php?id=<?php echo $line['comid'];?>">Edit Comment</a>
+                  <a class="ml-4 btn btn-danger" href="deletecom.php?id=<?php echo $line['comid']. '&' .'postid=' . $id; ?>">Delete Comment</a>
                 
                 
                 

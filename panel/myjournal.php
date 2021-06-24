@@ -41,7 +41,7 @@
             <p class="card-text"><?php echo $line["description"]; ?></p>
 
             <a href="editpaper.php?id=<?php echo $line['journalid']?>" class="btn btn-primary">Edit Paper</a>
-            <a href="deletepaper.php?id=<?php echo $line['jobid'];?>" class="btn btn-danger">Delete Job</a>
+            <a href="deletepaper.php?id=<?php echo $line['journalid'];?>" class="btn btn-danger">Delete This Journal paper</a>
         </div>
         </div>
         
