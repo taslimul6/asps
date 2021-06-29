@@ -20,6 +20,7 @@
                         <h5 class="card-subtitle my-3 text-muted"><?php echo "Supervised by: " . $dbmain0['superviser']; ?></h5>
                         <h6 class="card-subtitle my-3 text-muted"><?php echo $dbmain0['student_name'] . " - " . $dbmain0['date'] . " - " . "Batch: " . $dbmain0['batch']; ?></h6>
                         <p class="card-text"><?php echo $dbmain0["description"]; ?></p>
+                        <a href="<?php echo $dbmain0['file']; ?>">Download File</a>
                         
 
                         

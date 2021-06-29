@@ -57,7 +57,8 @@ require_once("./logic.php");
         <a href="journal.php" class="list-group-item list-group-item-action bg-light">Journals</a>
         <a href="jobs.php" class="list-group-item list-group-item-action bg-light">Jobs</a>
         <a href="blood.php" class="list-group-item list-group-item-action bg-light">Blood Bank</a>
-        <a href="message.php" class="list-group-item list-group-item-action bg-light">Messages</a>
+        <a href="token.php" class="list-group-item list-group-item-action bg-light">Token</a>
+        <a href="new_student.php" class="list-group-item list-group-item-action bg-light">New Student</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -79,7 +80,7 @@ require_once("./logic.php");
                 <?php echo $db["full_name"];?>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="profile.php">Profile</a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../logout.php">Logout</a>

@@ -41,7 +41,7 @@ $noticeDB = mysqli_query($connection,"SELECT * FROM notices ORDER BY id DESC LIM
                 $finalcon =implode(" ",$con3);
                 ?>
                  <span class="badge badge-danger">New</span>
-                <?php echo $finalcon . " . . . .";?></a>
+                <?php echo $finalcon . " . . . ." . "<br>";?></a>
               <?php }?>
               
             </div>

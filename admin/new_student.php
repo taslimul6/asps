@@ -9,7 +9,7 @@ require_once("logic.php");
 require_once("logic.php");
 
 
-$dbi = $connection -> query("SELECT * FROM students WHERE auth = '1' ORDER BY exam_roll;");
+$dbi = $connection -> query("SELECT * FROM students WHERE auth = '0' ORDER BY exam_roll;");
 
 $row = mysqli_num_rows($dbi);
 
@@ -19,7 +19,7 @@ $row = mysqli_num_rows($dbi);
 
 
         <div class="container-fluid">
-            <h2 class= "m-3 text-center" >All Students</h2>
+            <h2 class= "m-3 text-center" >New Students</h2>
         </div>
        
       
@@ -45,7 +45,8 @@ $row = mysqli_num_rows($dbi);
                                     <td><a href="viewstu.php?id=<?php echo $rows['exam_roll'];?>"><?php echo $rows["full_name"] ?></a></td>
                                     <td><?php echo $rows["batch"] ?></td>
                                     <td><?php echo $rows["my_phone_number"] ?></td>
-                                    <td><a href="del-stu.php?id=<?php echo $rows['exam_roll'] ?>" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="approve.php?id=<?php echo $rows['exam_roll'] ?>" class="btn btn-success">Approve</a>
+                                    <a href="del-stu.php?id=<?php echo $rows['exam_roll'] ?>" class="btn btn-danger">Remove</a></td>
                                 </tr>
 
                         <?php }}?>

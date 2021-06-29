@@ -62,7 +62,7 @@ require_once("./logic.php");
         <a href="journal.php" class="list-group-item list-group-item-action bg-light">Journals</a>
         <a href="jobs.php" class="list-group-item list-group-item-action bg-light">Jobs</a>
         <a href="blood.php" class="list-group-item list-group-item-action bg-light">Blood Bank</a>
-        <a href="message.php" class="list-group-item list-group-item-action bg-light">Messages</a>
+        
       </div>
     </div>
     <!-- /#sidebar-wrapper -->

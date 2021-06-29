@@ -1,16 +1,16 @@
 <?php
  require_once("templete-parts/header.php");
- $db = mysqli_query($connection, "SELECT * FROM books");
+ $db = mysqli_query($connection, "SELECT * FROM books ORDER BY id DESC");
  $row = mysqli_num_rows($db);
  
  if(isset($_POST['sub_code'])){
    $sub= $_POST['sub_code'];
-   $db1=mysqli_query($connection, "SELECT * FROM books WHERE sub_code ='$sub' ");
+   $db1=mysqli_query($connection, "SELECT * FROM books WHERE sub_code ='$sub' ORDER BY id DESC");
  }
  
  if(isset($_POST['semester'])){
    $sem= $_POST['semester'];
-   $db2=mysqli_query($connection, "SELECT * FROM books WHERE sem ='$sem'");
+   $db2=mysqli_query($connection, "SELECT * FROM books WHERE sem ='$sem' ORDER BY id DESC");
  }
  
  

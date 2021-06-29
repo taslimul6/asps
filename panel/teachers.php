@@ -16,7 +16,7 @@
 
         <div class="col-md-6">
           <div class="card" >
-            <img class="card-img-top" src="<?php echo $line['img'];?>" alt="Image">
+            <img class="card-img-top" src="<?php echo "../admin/" . $line['img'];?>" alt="Image" class="rounded img-fluid d-block " style="max-width:20vw; max-height:50vh;border:3px solid #666666;overflow:hidden;" >
             <div class="card-body">
               <h5 class="card-title"><?php echo $line['full_name'];?></h5>
               <h6 class="card-subtitle my-3 text-muted"><?php echo $line['position']?></h6>

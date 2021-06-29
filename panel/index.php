@@ -49,7 +49,7 @@
                 $finalcon =implode(" ",$con3);
                 ?>
                  <span class="badge badge-danger">New</span>
-                <?php echo $finalcon . " . . . .";?></a>
+                <?php echo $finalcon . " . . . ." . "<br>";?></a>
               <?php }?>
               
             </div>

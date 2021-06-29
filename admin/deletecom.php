@@ -1,5 +1,5 @@
 <?php 
-  require_once("temp-parts/header.php");
+  require_once("templete-parts/header.php");
 
 $comid =$_GET['id'];
 $post = $_GET['postid'];
@@ -49,4 +49,5 @@ if (isset($_POST['delete'])){
 
 
 
-<?php require_once("temp-parts/footer.php");?>
+      <?php require_once("templete-parts/footer.php");?>
+

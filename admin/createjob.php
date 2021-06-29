@@ -36,12 +36,12 @@ if (isset($_POST['upload'])){
     $file_ext = explode("." ,  $file_name);
     $fileActualExt = strtolower(end($file_ext));
   
-    $allowed = array('pdf','doc','docx' , 'ppt' , 'pptx' , 'txt');
+    $allowed = array('pdf','doc','docx' , 'ppt' , 'pptx' , 'txt' , 'png' , 'jpeg' , 'jpg');
   
     if(in_array($fileActualExt , $allowed)){
       if($file_error == 0){
         if($file_size < 50000000){
-          $newname = $batch . "job" . $jobid . "." . $fileActualExt;
+          $newname = "job" . $jobid . "." . $fileActualExt;
           $destination = "../uploads/job/" . $newname;
           move_uploaded_file($file_tname,  $destination);
 

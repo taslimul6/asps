@@ -39,7 +39,7 @@
             <p class="card-text"><?php echo $line["description"]; ?></p>
 
             <a href="editjob.php?id=<?php echo $line['jobid'];?>" class="btn btn-primary">Edit Job</a>
-            
+            <a href="deletejob.php?id=<?php echo $line['jobid'];?>" class="btn btn-danger">Delete Job</a>
         </div>
         </div>
         
@@ -52,6 +52,10 @@
     
 </div>
      
+</div>
+
+
+
 
 
 

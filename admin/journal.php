@@ -33,6 +33,7 @@
             <p class="card-text"><?php echo $line["description"]; ?></p>
 
             <a href="viewpaper.php?id=<?php echo $line['journalid']?>" class="btn btn-primary">View Paper</a>
+            <a href="deletepaper.php?id=<?php echo $line['journalid'];?>" class="btn btn-danger">Delete This Journal paper</a>
         </div>
         </div>
         

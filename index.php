@@ -23,9 +23,17 @@
 
         if(mysqli_num_rows($con_pass) == 1){
             if($password == $pass["password"]){
-                $_SESSION["roll"]=$roll;
+                
+                if($pass['auth'] == 1){
+                    $_SESSION["roll"]=$roll;
                 $_SESSION["full_name"] = $pass["full_name"];
-                header("location: panel/");
+                    header("location: panel/");
+
+                }else{
+                    header("location: wait.php");
+
+                }
+                
             }
             else {
             $error["ipass"]="Your Password is Incorrect";

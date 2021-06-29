@@ -39,9 +39,17 @@ if (isset($_POST['register'])){
     if(mysqli_num_rows($dbemail)== 0){
         if($password == $pconfirm){
             if( $token ==  $tokenlist["token"] ){
+                $vkey=md5(time());
                 mysqli_query($connection , "INSERT INTO teachers( full_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , position , email , password ) VALUES('$full_name', '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$position'  , '$email' , '$password');");
 
+                $to =     $email;
+                $sub = "Email Verification For Teacher Portal";
+                $msg = "Please click the link for your account verification <br> https://eee.taslimul/admin/vkey.php?vkey=$vkey";
+                $headers = "From: taslimul.com";
+
                 
+
+                header("location: index.php");
 
                 
             }else{

@@ -154,7 +154,7 @@ $show = mysqli_fetch_assoc($showP);
         <a href="journal.php" class="list-group-item list-group-item-action bg-light">Journals</a>
         <a href="jobs.php" class="list-group-item list-group-item-action bg-light">Jobs</a>
         <a href="blood.php" class="list-group-item list-group-item-action bg-light">Blood Bank</a>
-        <a href="message.php" class="list-group-item list-group-item-action bg-light">Messages</a>
+        
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -176,7 +176,7 @@ $show = mysqli_fetch_assoc($showP);
                 <?php echo $_SESSION["full_name"];?>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="profile.php">Profile</a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../logout.php">Logout</a>

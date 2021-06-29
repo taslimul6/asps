@@ -44,6 +44,7 @@
                         <th scope="col">Batch</th>
                         <th scope="col">Phone Number</th>
                         <th scope="col">Blood Group</th>
+                        <th scope="col">Last Donation Date</th>
                         
                         </tr>
                     </thead>
@@ -59,6 +60,8 @@
                                     <td><?php echo $rows["batch"] ?></td>
                                     <td><?php echo $rows["my_phone_number"] ?></td>
                                     <td><?php echo $rows["blood_group"] ?></td>
+                                    <td><?php echo $rows["blood_date"] ?></td>
+
                                     
                                 </tr>
 
@@ -67,7 +70,7 @@
                     </tbody>
                 </table>
             </div>
-      
+                                    </div>
       
    
 <?php require_once("templete-parts/footer.php");?>

@@ -35,6 +35,7 @@
                 <p class="card-text"><?php echo $line["description"]; ?></p>
 
                 <a href="viewpost.php?id=<?php echo $line['postid'];?>" class="btn btn-primary">View Full Post</a>
+                <a href="deletepost.php?id=<?php echo $line['postid'];?>" class="btn btn-danger">Delete This Post</a>
             </div>
           </div>
         

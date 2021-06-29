@@ -1,16 +1,15 @@
 <?php 
-  require_once("temp-parts/header.php");
+    require_once("templete-parts/header.php");
 
-$comid =$_GET['id'];
-$post = $_GET['postid'];
+$post =$_GET['id'];
 
 
 if (isset($_POST['delete'])){
  
 
 
-  $uploaded = mysqli_query($connection , " DELETE FROM comment WHERE comid =  '$comid';");
-  header("location: viewpost.php?id=$post&delete='comment'");
+  $uploaded = mysqli_query($connection , " DELETE FROM forum_post WHERE postid  =  '$post';");
+  header("location: forum.php?delete='1'");
 
 
 
@@ -26,7 +25,7 @@ if (isset($_POST['delete'])){
       
       <div class="row mt-5">
        <div class="col-md-12 text-center">
-       <h2>Confirm Delete this Comment?</h2>
+       <h2>Confirm Delete this Post?</h2>
        <form action="" method="post">
        <button name="delete" class="btn btn-danger mt-5 px-5">Delete</button>
        
@@ -49,4 +48,4 @@ if (isset($_POST['delete'])){
 
 
 
-<?php require_once("temp-parts/footer.php");?>
+      <?php require_once("templete-parts/footer.php");?>

@@ -9,11 +9,16 @@
 
   if(isset($_POST['submit'])){
     $name= $db['full_name'];
-    
+    $batch= $db['batch'];
     $com = $_POST['comment'];
     $comid = rand();
-    mysqli_query($connection, "INSERT INTO comment(name,com,postid,comid,date) VALUES ('$name' , '$com' , '$id', '$comid', '$today');");
+    mysqli_query($connection, "INSERT INTO comment(name,com,postid,comid,batch,date) VALUES ('$name' , '$com' , '$id', '$comid' , '$batch' , '$today');");
+    header("location: viewpost.php?id=$id&update='yes'");
   }
+  if(isset($_GET['update'])){
+    $success['upload']= "Your Comment is Added Successfully";
+  }
+
   
 ?>
 
@@ -22,7 +27,14 @@
       </div>
       
       <div class="row mx-3 ">
+
             <div class="col-sm-10 m-auto">
+            <div class="success text-success my-4">
+            <?php if(isset($success['upload'])){
+              echo $success['upload'];
+            } ?>
+          
+          </div>
             
                 <div class="card mt-3">
                 <div class="card-body">
@@ -53,8 +65,10 @@
                
                 <h6 class="card-subtitle my-3 text-muted ml-4"><?php echo $line['date']  . " - " . "Batch: " . $line['batch']; ?></h6>
                 <p class="card-text ml-4"><?php echo $line["com"]; ?></p>
+                <a class="ml-4 btn btn-danger" href="deletecom.php?id=<?php echo $line['comid']. '&' .'postid=' . $id; ?>">Delete Comment</a>
                 <?php if($line['name'] == $db["full_name"]){ ?>
-                  <a class="ml-4" href="editcom.php?id=<?php echo $line['comid']; ?>">Edit Comment</a>
+                  <a class="ml-4 btn btn-success" href="editcom.php?id=<?php echo $line['comid'];?>">Edit Comment</a>
+                  
                 
                 
                 
@@ -102,9 +116,6 @@
                   
           
           
-      
-
-      
      
 
 

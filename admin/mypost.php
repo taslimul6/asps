@@ -41,6 +41,7 @@
                 <p class="card-text"><?php echo $line["description"]; ?></p>
 
                 <a href="editpost.php?id=<?php echo $line['postid'];?>" class="btn btn-primary">Edit This Post</a>
+                <a href="deletepost.php?id=<?php echo $line['postid'];?>" class="btn btn-danger">Delete This Post</a>
             </div>
           </div>
         
@@ -49,9 +50,6 @@
       
     </div>
      
-
-
-
 
 
 

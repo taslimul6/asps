@@ -19,16 +19,18 @@
                         <h3 class="card-title"><?php echo $dbmain0['title']; ?></h3>
                         <h6 class="card-subtitle my-3 text-muted"><?php echo "Updated by: " . $dbmain0['student'] . " - " . $dbmain0['date'] . " - " . "Batch: " . $dbmain0['batch']; ?></h6>
                         <p class="card-text"><?php echo $dbmain0["description"]; ?></p>
+                        <a href="<?php echo $dbmain0['img']; ?>">Download File</a>
+                        
 
                         
                     </div>
+                    <img src="<?php echo $dbmain0['img']; ?>" class="" width="560"alt="">
                 </div>
 
             </div>
       </div>
       
      
-
 
 
 

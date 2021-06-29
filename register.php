@@ -37,15 +37,16 @@ if (isset($_POST['register'])){
     if(mysqli_num_rows($dbemail)== 0){
         if($password == $pconfirm){
             if(mysqli_num_rows($dbroll) == 0){
+                $vkey=md5(time());
                 mysqli_query($connection , "INSERT INTO students( full_name, fathers_name , mothers_name, dob ,gender, present_adress, permanent_adress , blood_group , my_phone_number , father_phone_number , batch , class_roll , exam_roll , email , password ) VALUES('$full_name', '$fathers_name' , '$mothers_name' , '$dob' , '$gender' , '$present_adress' , '$permanent_adress', '$blood_group' , '$my_phone_number' , '$father_phone_number' , '$batch' , '$class_roll' , '$exam_roll' , '$email' , '$password');");
                 mysqli_query($connection , "INSERT INTO images(exam_roll) VALUES ('$exam_roll');");
                 mysqli_query($connection , "INSERT INTO result(roll) VALUES ('$exam_roll');");
 
-                $vkey=md5(time());
+               
                 $to =     $email;
                 $sub = "Email Verification For Student Portal";
-                $msg = "Please click the link for your account verification <br> https://localhost/asps/vkey1.php?vkey=$vkey";
-                $header = "From: taslimulhasan.com";
+                $msg = "Please click the link for your account verification <br> https://eee.taslimul/vkey.php?vkey=$vkey";
+                $headers = "From: taslimul.com";
 
                 mail($to , $sub , $msg , $header);
 

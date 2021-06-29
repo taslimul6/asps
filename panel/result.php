@@ -50,7 +50,7 @@ $roll = $db['exam_roll'];
                                      ?>  
                                 </tr>
                                     
-                                    <td><?php echo $show["111"]; ?></td>
+                                    <td><?php echo $show["e111"]; ?></td>
                                     <td><?php echo $show["112"]; ?></td>
                                     <td><?php echo $show["113"]; ?></td>
                                     <td><?php echo $show["113l"]; ?></td>

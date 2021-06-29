@@ -8,6 +8,32 @@ $dir = "../panel/";
   
     $showr = mysqli_query($connection, "SELECT * FROM result WHERE roll = '$roll'"); 
     $show = mysqli_fetch_assoc($showr);
+
+    if(isset($_POST['update'])){
+
+        $e114= $_POST["114"];
+
+        mysqli_query($connection , "UPDATE results SET
+        
+          
+         e114='$e114'
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         WHERE roll = '$roll';");
+        
+    }
+
 }
    
 ?>
@@ -34,11 +60,7 @@ $dir = "../panel/";
         
         <div class="col-md-10 mb-4">
             <div class="error">
-                <?php 
-                        
-                    
-                        
-                ?>
+                
             </div>
         </div>
     </div>
@@ -48,7 +70,7 @@ $dir = "../panel/";
 
 <form action="">
     <div class="row m-3">
-            <form action="">
+            <form action="" method="post">
         <div class="col-sm-12">
         <h5 class=" ">1st Semester</h5>
             <div class=" " style="overflow-x:auto;">
@@ -77,7 +99,7 @@ $dir = "../panel/";
                                      ?>  
                                 </tr>
                                     
-                                    <td><input  style = "width:5vw" type="text" name="111" value= "<?php echo $show["111"]; ?>"></td>
+                                    <td><input  style = "width:5vw" type="text" name="114" value= "<?php echo $show["e111"]; ?>"></td>
                                     <td><input  style = "width:5vw" type="text" name="111" value= "<?php echo $show["112"]; ?>"></td>
                                     <td><input  style = "width:5vw" type="text" name="111" value= "<?php echo $show["113"]; ?>"></td>
                                     <td><input  style = "width:5vw" type="text" name="111" value= "<?php echo $show["113l"]; ?>"></td>

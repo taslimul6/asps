@@ -53,6 +53,7 @@ $dir = "../panel/";
             </div>
         </div>
     </div>
+    <?php if(isset($_POST['upload'])){?>
 
     <div class="row m-3">
  
@@ -77,22 +78,13 @@ $dir = "../panel/";
             <div class="card-body">
                 <h5 class="card-title">2nd Semester</h5>
                 <p class="card-text">
-                <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-                    <img src="<?php echo  $dir .  $show['sem2'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+                <div class="img-wrap mx-auto d-block" >
+                    <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir .  $show['sem2'] ?>" class="rounded img-fluid d-block m-auto"  alt="Payment Receipt"> 
                 </div>
                 </p>
 
                 
-                <form action="" method="post" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="formFile" class="form-label"></label>
-                    <input class="form-control" type="file" id="formFile" name="2">
-                </div>
-                    <button class="btn btn-primary" name="upload">Upload</button>
-                   
                 
-                
-                </form>
                 
             </div>
             </div>
@@ -111,22 +103,13 @@ $dir = "../panel/";
             <div class="card-body">
                 <h5 class="card-title">3rd Semester</h5>
                 <p class="card-text">
-                <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-                    <img src="<?php echo  $dir . $show['sem3'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+                <div class="img-wrap mx-auto d-block" >
+                    <img src="<?php echo  $dir . $show['sem3'] ?>" class="rounded img-fluid d-block m-auto "  alt="Payment Receipt" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;"> 
                 </div>
                 </p>
 
                 
-                <form action="" method="post" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="formFile" class="form-label"></label>
-                    <input class="form-control" type="file" id="formFile" name="3">
-                </div>
-                    <button class="btn btn-primary" name="upload">Upload</button>
-                   
                 
-                
-                </form>
                 
             </div>
             </div>
@@ -136,22 +119,13 @@ $dir = "../panel/";
             <div class="card-body">
                 <h5 class="card-title">4th Semester</h5>
                 <p class="card-text">
-                <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-                    <img src="<?php echo  $dir . $show['sem4'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+                <div class="img-wrap mx-auto d-block" >
+                    <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir . $show['sem4'] ?>" class="rounded img-fluid d-block m-auto "  alt="Payment Receipt"> 
                 </div>
                 </p>
 
                 
-                <form action="" method="post" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="formFile" class="form-label"></label>
-                    <input class="form-control" type="file" id="formFile" name="4">
-                </div>
-                    <button class="btn btn-primary" name="upload">Upload</button>
-                   
                 
-                
-                </form>
                 
             </div>
             </div>
@@ -169,22 +143,13 @@ $dir = "../panel/";
      <div class="card-body">
          <h5 class="card-title">5th Semester</h5>
          <p class="card-text">
-         <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-             <img src="<?php echo  $dir . $show['sem5'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+         <div class="img-wrap mx-auto d-block" >
+             <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir . $show['sem5'] ?>" class="rounded img-fluid d-block m-auto "  alt="Payment Receipt"> 
          </div>
          </p>
 
          
-         <form action="" method="post" enctype="multipart/form-data">
-         <div class="mb-3">
-             <label for="formFile" class="form-label"></label>
-             <input class="form-control" type="file" id="formFile" name="5">
-         </div>
-             <button class="btn btn-primary" name="upload">Upload</button>
-            
          
-         
-         </form>
          
      </div>
      </div>
@@ -194,22 +159,13 @@ $dir = "../panel/";
      <div class="card-body">
          <h5 class="card-title">6th Semester</h5>
          <p class="card-text">
-         <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-             <img src="<?php echo  $dir . $show['sem6'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+         <div class="img-wrap mx-auto d-block" >
+             <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir . $show['sem6'] ?>" class="rounded img-fluid d-block m-auto"  alt="Payment Receipt"> 
          </div>
          </p>
 
          
-         <form action="" method="post" enctype="multipart/form-data">
-         <div class="mb-3">
-             <label for="formFile" class="form-label"></label>
-             <input class="form-control" type="file" id="formFile" name="6">
-         </div>
-             <button class="btn btn-primary" name="upload">Upload</button>
-            
          
-         
-         </form>
          
      </div>
      </div>
@@ -227,22 +183,13 @@ $dir = "../panel/";
      <div class="card-body">
          <h5 class="card-title">7th Semester</h5>
          <p class="card-text">
-         <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-             <img src="<?php echo  $dir . $show['sem7'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+         <div class="img-wrap mx-auto d-block" >
+             <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir . $show['sem7'] ?>" class="rounded img-fluid d-block m-auto "  alt="Payment Receipt"> 
          </div>
          </p>
 
          
-         <form action="" method="post" enctype="multipart/form-data">
-         <div class="mb-3">
-             <label for="formFile" class="form-label"></label>
-             <input class="form-control" type="file" id="formFile" name="7">
-         </div>
-             <button class="btn btn-primary" name="upload">Upload</button>
-            
          
-         
-         </form>
          
      </div>
      </div>
@@ -252,22 +199,13 @@ $dir = "../panel/";
      <div class="card-body">
          <h5 class="card-title">8th Semester</h5>
          <p class="card-text">
-         <div class="img-wrap mx-auto d-block" style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;">
-             <img src="<?php echo  $dir . $show['sem8'] ?>" class="rounded img-fluid "  alt="Payment Receipt"> 
+         <div class="img-wrap mx-auto d-block" >
+             <img style="max-width:95%; max-height:50vh;border:3px solid #666666;overflow:hidden;" src="<?php echo  $dir . $show['sem8'] ?>" class="rounded img-fluid d-block m-auto "  alt="Payment Receipt"> 
          </div>
          </p>
 
          
-         <form action="" method="post" enctype="multipart/form-data">
-         <div class="mb-3">
-             <label for="formFile" class="form-label"></label>
-             <input class="form-control" type="file" id="formFile" name="8">
-         </div>
-             <button class="btn btn-primary" name="upload">Upload</button>
-            
          
-         
-         </form>
          
      </div>
      </div>
@@ -281,7 +219,7 @@ $dir = "../panel/";
 
 
 
-
+<?php }?>
 
 
 
